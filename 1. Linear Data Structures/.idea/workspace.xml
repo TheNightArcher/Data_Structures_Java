@@ -72,7 +72,7 @@
       <workItem from="1649250041192" duration="1509000" />
       <workItem from="1649252304756" duration="523000" />
       <workItem from="1649252868328" duration="1740000" />
-      <workItem from="1649254621525" duration="713000" />
+      <workItem from="1649254621525" duration="1072000" />
     </task>
     <task id="LOCAL-00001" summary="Working with abstract data structures">
       <created>1649253556214</created>
@@ -96,6 +96,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
