@@ -222,7 +222,7 @@ public class ArrayListTest {
 
     @Test
     public void addAndGetMultipleElements() {
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
             list.add(i);
