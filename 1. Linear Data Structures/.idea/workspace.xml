@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a1f16fa-cb5d-4a6b-80da-6b14ad0ed050" name="Changes" comment="Working with abstract data structures">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/implementations/ArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/implementations/ArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Stack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="27QQsS5vtjrkMqhUuPfNevQXDn8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -68,7 +75,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="JUnit.ArrayListTest">
+  <component name="RunManager" selected="JUnit.QueueTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LinearDS" />
@@ -107,8 +114,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LinearDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="implementations" />
+      <option name="MAIN_CLASS_NAME" value="implementations.QueueTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LinearDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="implementations" />
+      <option name="MAIN_CLASS_NAME" value="implementations.StackTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueueTest" />
+        <item itemvalue="JUnit.StackTest" />
         <item itemvalue="JUnit.ArrayListTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ArrayListTest.removeShouldReduceSize" />
@@ -130,7 +169,7 @@
       <workItem from="1649257997354" duration="423000" />
       <workItem from="1649264123015" duration="3950000" />
       <workItem from="1649268833724" duration="15000" />
-      <workItem from="1649320978211" duration="7058000" />
+      <workItem from="1649320978211" duration="11165000" />
     </task>
     <task id="LOCAL-00001" summary="Working with abstract data structures">
       <created>1649253556214</created>
