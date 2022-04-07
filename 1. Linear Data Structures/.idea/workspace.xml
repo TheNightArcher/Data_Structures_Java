@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7a1f16fa-cb5d-4a6b-80da-6b14ad0ed050" name="Changes" comment="Working with abstract data structures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/implementations/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/Stack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="JUnit.QueueTest">
+  <component name="RunManager" selected="JUnit.SinglyLinkedListTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LinearDS" />
@@ -98,22 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ArrayListTest.removeShouldReduceSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LinearDS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="implementations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="implementations" />
-      <option name="MAIN_CLASS_NAME" value="implementations.ArrayListTest" />
-      <option name="METHOD_NAME" value="removeShouldReduceSize" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="QueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LinearDS" />
       <extension name="coverage">
@@ -124,6 +106,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="implementations" />
       <option name="MAIN_CLASS_NAME" value="implementations.QueueTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SinglyLinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LinearDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="implementations" />
+      <option name="MAIN_CLASS_NAME" value="implementations.SinglyLinkedListTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SinglyLinkedListTest" />
         <item itemvalue="JUnit.QueueTest" />
         <item itemvalue="JUnit.StackTest" />
         <item itemvalue="JUnit.ArrayListTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ArrayListTest.removeShouldReduceSize" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +166,7 @@
       <workItem from="1649257997354" duration="423000" />
       <workItem from="1649264123015" duration="3950000" />
       <workItem from="1649268833724" duration="15000" />
-      <workItem from="1649320978211" duration="11165000" />
+      <workItem from="1649320978211" duration="13723000" />
     </task>
     <task id="LOCAL-00001" summary="Working with abstract data structures">
       <created>1649253556214</created>
