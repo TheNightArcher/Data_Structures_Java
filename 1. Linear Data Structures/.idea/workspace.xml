@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7a1f16fa-cb5d-4a6b-80da-6b14ad0ed050" name="Changes" comment="Working with abstract data structures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/implementations/SinglyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/implementations/SinglyLinkedList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,8 @@
       <workItem from="1649257997354" duration="423000" />
       <workItem from="1649264123015" duration="3950000" />
       <workItem from="1649268833724" duration="15000" />
-      <workItem from="1649320978211" duration="13723000" />
+      <workItem from="1649320978211" duration="13831000" />
+      <workItem from="1649369400345" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Working with abstract data structures">
       <created>1649253556214</created>
