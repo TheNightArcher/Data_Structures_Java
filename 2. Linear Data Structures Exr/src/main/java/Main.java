@@ -1,16 +1,15 @@
-import implementations.DoublyLinkedList;
+import implementations.ArrayDeque;
 
 public class Main {
     public static void main(String[] args) {
 
-        DoublyLinkedList<Integer> queue = new DoublyLinkedList<>();
+        ArrayDeque<Integer> queue = new ArrayDeque<>();
 
-        queue.addFirst(1);
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
 
+        System.out.println(queue.get(1));
 
-        for (int e : queue) {
-
-            System.out.println(e);
-        }
     }
 }
