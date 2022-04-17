@@ -5,11 +5,11 @@ public class Main {
 
         ArrayDeque<Integer> queue = new ArrayDeque<>();
 
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
+        queue.push(1);
+        queue.push(2);
 
-        System.out.println(queue.get(1));
+        System.out.println(queue.peek());
+
 
     }
 }
