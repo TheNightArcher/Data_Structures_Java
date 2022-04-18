@@ -9,7 +9,6 @@ public class ArrayDeque<E> implements Deque<E> {
     private int head;
     private int tail;
     private int size;
-    private int capacity;
 
     private Object[] elements;
 
