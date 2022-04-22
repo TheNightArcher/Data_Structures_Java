@@ -79,7 +79,33 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public void swap(E firstKey, E secondKey) {
+        if (firstKey == null || secondKey == null) {
+            throw new IllegalArgumentException();
+        }
 
+        Tree<E> firstSequence = find(firstKey);
+        Tree<E> secondSequence = find(secondKey);
+
+        if (firstSequence == null || secondSequence == null) {
+            throw new IllegalArgumentException();
+        }
+
+        Tree<E> firstParent = firstSequence.parent;
+        Tree<E> secondParent = secondSequence.parent;
+
+        if (firstParent != null && secondParent != null) {
+            int firstIndex = this.children.indexOf(firstSequence);
+            int secondIndex = this.children.indexOf(secondSequence);
+
+            this.children.set(firstIndex, secondSequence);
+            this.children.set(secondIndex, firstSequence);
+        } else {
+            if (firstParent == null) {
+                swapRoot(secondSequence);
+            } else {
+                swapRoot(firstSequence);
+            }
+        }
     }
 
     private void dfs(Tree<E> tree, List<E> result) {
@@ -105,6 +131,13 @@ public class Tree<E> implements AbstractTree<E> {
             }
         }
         return null;
+    }
+
+    private void swapRoot(Tree<E> node) {
+        this.key = node.key;
+        this.children = node.children;
+        this.parent = null;
+        node.parent = null;
     }
 }
 

@@ -14,7 +14,7 @@ public class TreeTest {
 
     @Before
     public void setUp() {
-        this.tree =  new Tree<>(7,
+        this.tree = new Tree<>(7,
                 new Tree<>(19,
                         new Tree<>(1),
                         new Tree<>(12),
@@ -58,8 +58,8 @@ public class TreeTest {
             assertEquals(expected[index++], num);
         }
     }
-	
-	@Test
+
+    @Test
     public void testRemoveNode() {
         tree.removeNode(19);
         Integer[] expected = {7, 21, 14, 23, 6};
@@ -71,11 +71,23 @@ public class TreeTest {
             assertEquals(expected[index++], num);
         }
     }
-	
-	@Test
+
+    @Test
     public void testSwap() {
         tree.swap(19, 14);
         Integer[] expected = {7, 14, 21, 19, 23, 6, 1, 12, 31};
+        List<Integer> integers = tree.orderBfs();
+        assertEquals(expected.length, integers.size());
+        int index = 0;
+        for (Integer num : integers) {
+            assertEquals(expected[index++], num);
+        }
+    }
+
+    @Test
+    public void testRootSwap() {
+        tree.swap(19,7);
+        Integer[] expected = {19,1, 12, 31};
         List<Integer> integers = tree.orderBfs();
         assertEquals(expected.length, integers.size());
         int index = 0;
