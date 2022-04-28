@@ -2,47 +2,83 @@ package implementations;
 
 import interfaces.AbstractTree;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Tree<E> implements AbstractTree<E> {
+    private E key;
+    private Tree<E> parent;
+    private List<Tree<E>> children;
+
+    public Tree(E key, Tree<E>... children) {
+        this.key = key;
+        this.children = new ArrayList<>();
+
+        for (Tree<E> child : children) {
+            child.setParent(this);
+            this.children.add(child);
+        }
+    }
 
     @Override
     public void setParent(Tree<E> parent) {
-
+        this.parent = parent;
     }
 
     @Override
     public void addChild(Tree<E> child) {
-
+        this.children.add(child);
     }
 
     @Override
     public Tree<E> getParent() {
-        return null;
+        return this.parent;
     }
 
     @Override
     public E getKey() {
-        return null;
+        return this.key;
     }
 
     @Override
     public String getAsString() {
-        return null;
+        StringBuilder result = new StringBuilder();
+
+        crawlingByDFS(this, result, 0);
+
+        return result.toString().trim();
     }
 
     @Override
     public List<E> getLeafKeys() {
-        return null;
+        return crawlingByBFS()
+                .stream()
+                .filter(tree -> tree.children.isEmpty())
+                .map(Tree::getKey)
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<E> getMiddleKeys() {
-        return null;
+        return crawlingByBFS()
+                .stream()
+                .filter(tree -> tree.parent != null && !tree.children.isEmpty())
+                .map(Tree::getKey)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Tree<E> getDeepestLeftmostNode() {
+
+
+
+        for (Tree<E> child : this.children) {
+            getDeepestLeftmostNode();
+        }
+
         return null;
     }
 
@@ -59,6 +95,42 @@ public class Tree<E> implements AbstractTree<E> {
     @Override
     public List<Tree<E>> subTreesWithGivenSum(int sum) {
         return null;
+    }
+
+    private void crawlingByDFS(Tree<E> tree, StringBuilder result, int indent) {
+
+        result.append(this.getPadding(indent))
+                .append(tree.key)
+                .append(System.lineSeparator());
+
+        for (Tree<E> child : tree.children) {
+            crawlingByDFS(child, result, indent + 2);
+        }
+    }
+
+    private String getPadding(int size) {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(" ".repeat(Math.max(0, size)));
+
+        return sb.toString();
+    }
+
+    private List<Tree<E>> crawlingByBFS() {
+        Deque<Tree<E>> queue = new ArrayDeque<>();
+
+        queue.offer(this);
+
+        List<Tree<E>> allNodes = new ArrayList<>();
+
+        while (!queue.isEmpty()) {
+            Tree<E> tree = queue.poll();
+            allNodes.add(tree);
+            for (Tree<E> child : tree.children) {
+                queue.offer(child);
+            }
+        }
+        return allNodes;
     }
 }
 
