@@ -72,14 +72,22 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public Tree<E> getDeepestLeftmostNode() {
+        return crawlingByBFS()
+                .stream()
+                .filter(tree -> tree.children.isEmpty() && tree.parent != this)
+                .findFirst().orElse(null);
+    }
 
+    private void findDeepestLeft(Tree<E> tree, int levelOfDeep, Tree<E> deepestNode) {
+        int currentLevel = 1;
 
-
-        for (Tree<E> child : this.children) {
-            getDeepestLeftmostNode();
+        for (Tree<E> child : tree.children) {
+            findDeepestLeft(child, levelOfDeep++, deepestNode);
+            if (levelOfDeep > currentLevel){
+                currentLevel = levelOfDeep;
+                deepestNode = child;
+            }
         }
-
-        return null;
     }
 
     @Override
