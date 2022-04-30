@@ -72,22 +72,22 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public Tree<E> getDeepestLeftmostNode() {
-        return crawlingByBFS()
-                .stream()
-                .filter(tree -> tree.children.isEmpty() && tree.parent != this)
-                .findFirst().orElse(null);
-    }
+        List<Tree<E>> trees = this.crawlingByBFS();
 
-    private void findDeepestLeft(Tree<E> tree, int levelOfDeep, Tree<E> deepestNode) {
-        int currentLevel = 1;
+        Tree<E> deepestLeftNode = null;
+        int maxPath = 0;
 
-        for (Tree<E> child : tree.children) {
-            findDeepestLeft(child, levelOfDeep++, deepestNode);
-            if (levelOfDeep > currentLevel){
-                currentLevel = levelOfDeep;
-                deepestNode = child;
+        for (Tree<E> tree : trees) {
+            if (tree.isLeaf()) {
+                int currentPath = getStepsFromLeafToRoot(tree);
+
+                if (currentPath > maxPath) {
+                    maxPath = currentPath;
+                    deepestLeftNode = tree;
+                }
             }
         }
+        return deepestLeftNode;
     }
 
     @Override
@@ -105,25 +105,6 @@ public class Tree<E> implements AbstractTree<E> {
         return null;
     }
 
-    private void crawlingByDFS(Tree<E> tree, StringBuilder result, int indent) {
-
-        result.append(this.getPadding(indent))
-                .append(tree.key)
-                .append(System.lineSeparator());
-
-        for (Tree<E> child : tree.children) {
-            crawlingByDFS(child, result, indent + 2);
-        }
-    }
-
-    private String getPadding(int size) {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(" ".repeat(Math.max(0, size)));
-
-        return sb.toString();
-    }
-
     private List<Tree<E>> crawlingByBFS() {
         Deque<Tree<E>> queue = new ArrayDeque<>();
 
@@ -139,6 +120,36 @@ public class Tree<E> implements AbstractTree<E> {
             }
         }
         return allNodes;
+    }
+
+    private void crawlingByDFS(Tree<E> tree, StringBuilder result, int indent) {
+
+        result.append(this.getPadding(indent))
+                .append(tree.key)
+                .append(System.lineSeparator());
+
+        for (Tree<E> child : tree.children) {
+            crawlingByDFS(child, result, indent + 2);
+        }
+    }
+
+    private String getPadding(int size) {
+        return " ".repeat(Math.max(0, size));
+    }
+
+    private boolean isLeaf() {
+        return this.parent != null && this.children.isEmpty();
+    }
+
+    private int getStepsFromLeafToRoot(Tree<E> tree) {
+        int counter = 0;
+
+        Tree<E> current = tree;
+        while (current.parent != null) {
+            counter++;
+            current = current.parent;
+        }
+        return counter;
     }
 }
 
