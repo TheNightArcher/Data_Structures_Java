@@ -2,10 +2,7 @@ package implementations;
 
 import interfaces.AbstractTree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Tree<E> implements AbstractTree<E> {
@@ -92,7 +89,30 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getLongestPath() {
-        return null;
+        List<Tree<E>> trees = this.crawlingByBFS();
+
+        List<E> longestPathElements = new ArrayList<>();
+        int longestPath = 0;
+
+        for (Tree<E> tree : trees) {
+            List<E> currentPathElements = new ArrayList<>();
+            int currentPath = 0;
+
+            while (tree.parent != null) {
+                currentPath++;
+                currentPathElements.add(tree.key);
+                tree = tree.parent;
+            }
+
+            if (currentPath > longestPath) {
+                longestPath = currentPath;
+                longestPathElements = currentPathElements;
+            }
+        }
+        longestPathElements.add(this.key);
+        Collections.reverse(longestPathElements);
+
+        return longestPathElements;
     }
 
     @Override
