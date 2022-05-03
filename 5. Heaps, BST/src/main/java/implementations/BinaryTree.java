@@ -7,25 +7,34 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class BinaryTree<E> implements AbstractBinaryTree<E> {
+    private E key;
+    private BinaryTree<E> left;
+    private BinaryTree<E> right;
+
+    public BinaryTree(E key, BinaryTree<E> left, BinaryTree<E> right) {
+        this.key = key;
+        this.left = left;
+        this.right = right;
+    }
 
     @Override
     public E getKey() {
-        return null;
+        return this.key;
     }
 
     @Override
     public AbstractBinaryTree<E> getLeft() {
-        return null;
+        return this.left;
     }
 
     @Override
     public AbstractBinaryTree<E> getRight() {
-        return null;
+        return this.right;
     }
 
     @Override
     public void setKey(E key) {
-
+        this.key = key;
     }
 
     @Override
