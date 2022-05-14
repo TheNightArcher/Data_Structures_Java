@@ -45,13 +45,13 @@ public class BinarySearchTree<E extends Comparable<E>> {
         this.root = root;
     }
 
+    public Node<E> getRoot() {
+        return this.root;
+    }
+
     public void eachInOrder(Consumer<E> consumer) {
 
         nodeInOrder(this.root, consumer);
-    }
-
-    public Node<E> getRoot() {
-        return this.root;
     }
 
     public void insert(E element) {
@@ -184,19 +184,60 @@ public class BinarySearchTree<E extends Comparable<E>> {
         return getNodeCount(node.getLeft()) + 1 + nodeRank(node.getRight(), element);
     }
 
+    public E floor(E element) {
+        if (this.root == null) {
+            return null;
+        }
+
+        Node<E> current = this.root;
+        Node<E> nearestValue = null;
+
+        while (current != null) {
+            if (isGreater(element, current)) {
+                nearestValue = current;
+                current = current.getRight();
+            } else if (isLess(element, current)) {
+                current = current.getLeft();
+            } else {
+                Node<E> left = current.getLeft();
+
+                if (left != null && nearestValue != null) {
+                    nearestValue = isGreater(left.getValue(), nearestValue) ? left : nearestValue;
+                } else if (nearestValue == null) {
+                    nearestValue = left;
+                }
+                break;
+            }
+        }
+        return nearestValue == null ? null : nearestValue.value;
+    }
+
     public E ceil(E element) {
         if (this.root == null) {
             return null;
         }
 
-        E nearestValue = null;
+        Node<E> current = this.root;
+        Node<E> nearestValue = null;
 
+        while (current != null) {
+            if (isLess(element, current)) {
+                nearestValue = current;
+                current = current.getLeft();
+            } else if (isGreater(element, current)) {
+                current = current.rightChild;
+            } else {
+                Node<E> right = current.getRight();
 
-        return nearestValue;
-    }
-
-    public E floor(E element) {
-        return null;
+                if (right != null && nearestValue != null) {
+                    nearestValue = isLess(right.getValue(), nearestValue) ? right : nearestValue;
+                }else if (nearestValue == null){
+                    nearestValue = right;
+                }
+                break;
+            }
+        }
+        return nearestValue == null ? null : nearestValue.value;
     }
 
     private void nodeInOrder(Node<E> node, Consumer<E> consumer) {
